@@ -1,11 +1,11 @@
 #!/bin/python3
 
-#Python Version:    3.10
-#Author:            ENRORMA
-#Created:           14/9/2023
-#Modified           14/9/2023
-#License            GPL3
-#Oxygen Version     0.1
+#Python Version:	3.10
+#Author:			ENRORMA
+#Created:			14/9/2023
+#Modified:			14/9/2023
+#License:			GPL3
+#Oxygen Version:	0.1
 
 import os
 import sys
