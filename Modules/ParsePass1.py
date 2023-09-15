@@ -1,14 +1,17 @@
 def ParsePass1(LocalSourceFileContent):
-    LocalSourceLines = LocalSourceFileContent.split("\n")
-    LineCount = len(LocalSourceLines)
-    LineCounter = 0
-    while LineCounter < LineCount:
-        LineCounter += 1
-        Line = LocalSourceLines[:1]
-        print(Line)
-        Line = "".join(Line)
-        CommentCheck = Line.lstrip()[:1]
-        if CommentCheck != "#":
-            GoodLines = LocalSourceLines[:1]
-        LocalSourceLines = LocalSourceLines[1:]
-    #print(GoodLines)
+	LineList = LocalSourceFileContent.split("\n")
+	LineCount = len(LineList)
+	LineCounter = 0
+	while LineCounter < LineCount:
+		LineCounter += 1
+		Line = LineList[:1]
+		Line = "".join(Line)
+		Line = Line.lstrip()
+		print(Line)
+		if Line[:1] != "#":
+			print("nein")
+		else:
+			print("ja")
+		LineList = LineList[1:]
+
+		#GoodLines += CheckedLine
