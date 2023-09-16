@@ -7,11 +7,14 @@ def ParsePass1(LocalSourceFileContent):
 		Line = LineList[:1]
 		Line = "".join(Line)
 		Line = Line.lstrip()
-		print(Line)
 		if Line[:1] != "#":
-			print("nein")
-		else:
-			print("ja")
-		LineList = LineList[1:]
+			InstructionList = Line.split()
+			CheckInstruction = "".join(InstructionList[:1])
+			match CheckInstruction:
+				case "jmp":
+					print("yes")
+			print(InstructionList)
+			print(CheckInstruction)
+			print("next")
 
-		#GoodLines += CheckedLine
+		LineList = LineList[1:]
