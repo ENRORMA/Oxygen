@@ -19,4 +19,4 @@ def ReadFile(LocalFileName):
                 if WordNumber == WordCount:
                     OutputLineList += [OutputWordList]
                     OutputWordList = []
-    return LocalFileContent
+    return OutputLineList
