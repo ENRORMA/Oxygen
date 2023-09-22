@@ -15,7 +15,7 @@ def ReadFile(FileName):
             while WordNumber < WordCount:
                 Word = Line[WordNumber]
                 WordNumber += 1
-                OutputWordList += [Word]
+                OutputWordList += [Word] #white spaces should be removed before this line
                 if WordNumber == WordCount:
                     OutputLineList += [OutputWordList]
                     OutputWordList = []
