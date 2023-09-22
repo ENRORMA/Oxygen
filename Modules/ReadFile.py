@@ -1,13 +1,13 @@
 #!/bin/python3
-def ReadFile(LocalFileName):
-    with open(LocalFileName, "r") as file:
-        LocalFileContent = file.read().splitlines()
-        Lines = len(LocalFileContent)
+def ReadFile(FileName):
+    with open(FileName, "r") as file:
+        FileContent = file.read().splitlines()
+        Lines = len(FileContent)
         LineNumber = 0
         OutputWordList = []
         OutputLineList = []
         while LineNumber < Lines:
-            Line = LocalFileContent[LineNumber]
+            Line = FileContent[LineNumber]
             Line = Line.split()
             LineNumber += 1
             WordNumber = 0
