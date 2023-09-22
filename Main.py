@@ -8,8 +8,8 @@
 import os
 import sys
 from Modules.ReadFile import *
-#from Modules.ParsePass1 import *
+from Modules.ParsePass1 import *
 SourceFileName = "source"
 
 SourceFileContent = ReadFile(SourceFileName)
-#SourceFileParse1Content = ParsePass1(SourceFileContent)
+SourceFileParse1Content = ParsePass1(SourceFileContent)
