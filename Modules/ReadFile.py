@@ -4,15 +4,22 @@ def ReadFile(LocalFileName):
         LocalFileContent = file.read().splitlines()
         Lines = len(LocalFileContent)
         LineNumber = 0
+        OutputWordList = []
+        OutputLineList = []
         while LineNumber < Lines:
             Line = LocalFileContent[LineNumber]
             Line = Line.split()
-            print(Line)
+            #print(Line)
             LineNumber += 1
             WordNumber = 0
             WordCount = len(Line)
             while WordNumber < WordCount:
                 Word = Line[WordNumber]
-                print(Word)
                 WordNumber += 1
+                #print(Word)
+                OutputWordList += [Word]
+                if WordNumber == WordCount:
+                    OutputLineList += [OutputWordList]
+                    OutputWordList = []
+        print(OutputLineList)
     return LocalFileContent
