@@ -15,8 +15,37 @@ def ParsePass1(SourceFileContent):
             WordNumber += 1
             print(WordInput)
             match WordInput:
+                case "xor":
+                    OutputList += [WordInput]
+                case "and":
+                    OutputList += [WordInput]
+                case "or":
+                    OutputList += [WordInput]
+                case "not":
+                    OutputList += [WordInput]
+                case "add":
+                    OutputList += [WordInput]
+                case "sub":
+                    OutputList += [WordInput]
+                case "inc":
+                    OutputList += [WordInput]
+                case "dec":
+                    OutputList += [WordInput]
+                case "mov":
+                    OutputList += [WordInput]
+                case "push":
+                    OutputList += [WordInput]
+                case "pop":
+                    OutputList += [WordInput]
                 case "jmp":
-                    print("du hurensohn")
+                    OutputList += [WordInput]
+                case "jnz":
+                    OutputList += [WordInput]
+                case "jov":
+                    OutputList += [WordInput]
+                case "halt":
+                    OutputList += [WordInput]
+                case "nop":
                     OutputList += [WordInput]
                 case _:
                     CharInput = WordInput[:1]
@@ -38,5 +67,5 @@ def ParsePass1(SourceFileContent):
             print(f"is address {IsAddress}")
             print(f"is comment {IsComment}")
             print(f"is number {IsNumber}")
-        print("")
-        print(OutputList)
+    print("")
+    print(OutputList)
