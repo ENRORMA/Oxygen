@@ -39,6 +39,8 @@ def ParsePass1(SourceFileContent):
                     OutputList += [WordInput]
                 case "jmp":
                     OutputList += [WordInput]
+                    #put code here to get output if input "jmp 20" output should be "mov 20 $pc \n jmp"
+                    #figure out how to scedule additions to the output list in the future
                 case "jnz":
                     OutputList += [WordInput]
                 case "jov":
@@ -63,6 +65,7 @@ def ParsePass1(SourceFileContent):
                                 OutputList += [WordInput]
                             except Exception:
                                 #add error message here
+                                print("Something went wrong")
                                 pass
             print(f"is address {IsAddress}")
             print(f"is comment {IsComment}")
