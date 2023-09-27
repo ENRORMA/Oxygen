@@ -4,4 +4,4 @@ nop
 #this is a comment
 inc $1
 
-after empty line
+#after empty line
