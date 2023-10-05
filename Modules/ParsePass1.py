@@ -2,6 +2,7 @@ def ParsePass1(SourceFileContent):
 	LineCount = len(SourceFileContent)
 	LineNumber = 0
 	OutputList = []
+	SceduleList = []
 	while LineNumber < LineCount:
 		LineInput = SourceFileContent[LineNumber]
 		LineNumber += 1
@@ -28,9 +29,11 @@ def ParsePass1(SourceFileContent):
 				case "sub":
 					OutputList += [WordInput]
 				case "inc":
-					OutputList += [WordInput]
+					OutputList += ["add"]
+					SceduleList += [[1, 1], [2, LineInput[WordNumber]]]
 				case "dec":
-					OutputList += [WordInput]
+					OutputList += ["sub"]
+					SceduleList += [[1, 1], [2, LineInput[WordNumber]]]
 				case "mov":
 					OutputList += [WordInput]
 				case "push":
@@ -38,13 +41,11 @@ def ParsePass1(SourceFileContent):
 				case "pop":
 					OutputList += [WordInput]
 				case "jmp":
-					OutputList += [WordInput]
-					# put code here to get output if input "jmp 20" output should be "mov 20 $pc \n jmp"
-					# figure out how to scedule additions to the output list in the future
+					SceduleList += [[0, "mov"], [1, "$pc"], [2, "jmp"]]
 				case "jnz":
-					OutputList += [WordInput]
+					SceduleList += [[0, "mov"], [1, "$pc"], [2, "jnz"]]
 				case "jov":
-					OutputList += [WordInput]
+					SceduleList += [[0, "mov"], [1, "$pc"], [2, "jov"]]
 				case "halt":
 					OutputList += [WordInput]
 				case "nop":
@@ -67,6 +68,22 @@ def ParsePass1(SourceFileContent):
 								# add error message here
 								print("Something went wrong")
 								pass
+			#calculate the scedule list
+			SceduleListCounter = 0
+			while len(SceduleList) > SceduleListCounter:
+				if len(SceduleList) == 0:
+					break
+				if SceduleList[SceduleListCounter][0] == 0:
+					OutputList += [SceduleList[SceduleListCounter][1]]
+					SceduleList.pop(SceduleListCounter)
+					SceduleListCounter += -1
+					print("is zero")
+				else:
+					SceduleList[SceduleListCounter][0] += -1
+					print("hhhhhhhh")
+				SceduleListCounter += 1
+				if len(SceduleList) == 1:
+					SceduleListCounter += -1
 			print(f"is address {IsAddress}")
 			print(f"is comment {IsComment}")
 			print(f"is number {IsNumber}")
