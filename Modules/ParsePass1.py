@@ -3,6 +3,7 @@ def ParsePass1(SourceFileContent):
 	LineNumber = 0
 	OutputList = []
 	SceduleList = []
+	Output = []
 	while LineNumber < LineCount:
 		LineInput = SourceFileContent[LineNumber]
 		LineNumber += 1
@@ -70,22 +71,19 @@ def ParsePass1(SourceFileContent):
 								pass
 			#calculate the scedule list
 			SceduleListCounter = 0
-			while len(SceduleList) > SceduleListCounter:
-				if len(SceduleList) == 0:
-					break
+			while len(SceduleList) != SceduleListCounter:
 				if SceduleList[SceduleListCounter][0] == 0:
 					OutputList += [SceduleList[SceduleListCounter][1]]
 					SceduleList.pop(SceduleListCounter)
 					SceduleListCounter += -1
-					print("is zero")
 				else:
 					SceduleList[SceduleListCounter][0] += -1
-					print("hhhhhhhh")
 				SceduleListCounter += 1
-				if len(SceduleList) == 1:
-					SceduleListCounter += -1
 			print(f"is address {IsAddress}")
 			print(f"is comment {IsComment}")
 			print(f"is number {IsNumber}")
+		if len(OutputList) != 0:
+			Output += [OutputList]
+		OutputList = []
 	print("")
-	print(OutputList)
+	print(Output)
