@@ -1,3 +1,5 @@
+import Main
+exec(LanguageImport)
 def ParsePass1(SourceFileContent):
 	LineCount = len(SourceFileContent)
 	LineNumber = 0
@@ -67,7 +69,7 @@ def ParsePass1(SourceFileContent):
 								OutputList += [WordInput]
 							except Exception:
 								# add error message here
-								print("Something went wrong")
+								habicht(WordInput,LineCount)
 								pass
 			#calculate the scedule list
 			SceduleListCounter = 0

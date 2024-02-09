@@ -8,7 +8,7 @@
 import os
 import sys
 from Modules.ReadFile import *
-from Modules.ParsePass1 import *
+from Modules.ParsePass1 import ParsePass1
 
 #temporary
 SourceFileName = "source"
@@ -23,9 +23,9 @@ try:
 except Exception:
 	quit("Unsupported Language")
 
-exec(LanguageImport)
+#exec(LanguageImport)
 
-Works(0,1,2)
+#Works(0,1,2)
 
 
 #stage 1 assembling
