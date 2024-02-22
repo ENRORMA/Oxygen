@@ -1,5 +1,4 @@
-import Main
-exec(LanguageImport)
+from Po.Language import *
 def ParsePass1(SourceFileContent):
 	LineCount = len(SourceFileContent)
 	LineNumber = 0
