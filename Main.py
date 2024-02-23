@@ -7,17 +7,26 @@
 
 import os
 import sys
-from Modules.ReadFile import *
-from Modules.ParsePass1 import *
-from Modules.LanguageLoader import *
+
 from Modules.CreateConfig import *
-from Po.Language import *
+from Modules.LanguageLoader import *
+
+print(os.path.abspath(os.path.dirname(__file__)))
 
 #temporary
 SourceFileName = "source"
 
-Works(0,1,2)
+#config and language set up
+CreateConfig()
+LoadLanguage()
+from Po.Language import *
 
+#import modules here because it has to be created first
+from Modules.ReadFile import *
+from Modules.ParsePass1 import *
+
+#check language
+Works(0,1,2)
 
 #stage 1 assembling
 SourceFileContent = ReadFile(SourceFileName)

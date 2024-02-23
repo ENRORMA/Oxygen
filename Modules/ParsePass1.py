@@ -67,8 +67,7 @@ def ParsePass1(SourceFileContent):
 								IsNumber = True
 								OutputList += [WordInput]
 							except Exception:
-								# add error message here
-								habicht(WordInput,LineCount)
+								Print_Error_Unknown_Instruction_pass_1(WordInput, LineNumber)
 								pass
 			#calculate the scedule list
 			SceduleListCounter = 0
