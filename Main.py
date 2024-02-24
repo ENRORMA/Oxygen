@@ -11,8 +11,6 @@ import sys
 from Modules.CreateConfig import *
 from Modules.LanguageLoader import *
 
-print(os.path.abspath(os.path.dirname(__file__)))
-
 #temporary
 SourceFileName = "source"
 
