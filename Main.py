@@ -23,9 +23,6 @@ from Po.Language import *
 from Modules.ReadFile import *
 from Modules.ParsePass1 import *
 
-#check language
-Works(0,1,2)
-
 #stage 1 assembling
 SourceFileContent = ReadFile(SourceFileName)
 SourceFileParse1Content = ParsePass1(SourceFileContent)
