@@ -1,1 +1,1 @@
-English.py
+/home/enrorma/Code/Python/Oxygen/Modules/../Po/English.py

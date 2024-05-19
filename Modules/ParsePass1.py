@@ -1,12 +1,13 @@
+#!/bin/python3
 from Po.Language import *
-def ParsePass1(SourceFileContent):
-	LineCount = len(SourceFileContent)
+def ParsePass1(Input):
+	LineCount = len(Input)
 	LineNumber = 0
 	OutputList = []
 	SceduleList = []
 	Output = []
 	while LineNumber < LineCount:
-		LineInput = SourceFileContent[LineNumber]
+		LineInput = Input[LineNumber]
 		LineNumber += 1
 		WordCount = len(LineInput)
 		WordNumber = 0
@@ -31,16 +32,10 @@ def ParsePass1(SourceFileContent):
 				case "sub":
 					OutputList += [WordInput]
 				case "inc":
-					OutputList += ["add"]
-					SceduleList += [[1, 1], [2, LineInput[WordNumber]]]
+					OutputList += [WordInput]
 				case "dec":
-					OutputList += ["sub"]
-					SceduleList += [[1, 1], [2, LineInput[WordNumber]]]
+					OutputList += [WordInput]
 				case "mov":
-					OutputList += [WordInput]
-				case "push":
-					OutputList += [WordInput]
-				case "pop":
 					OutputList += [WordInput]
 				case "jmp":
 					SceduleList += [[0, "mov"], [1, "$pc"], [2, "jmp"]]
@@ -51,6 +46,8 @@ def ParsePass1(SourceFileContent):
 				case "halt":
 					OutputList += [WordInput]
 				case "nop":
+					OutputList += [WordInput]
+				case "int":
 					OutputList += [WordInput]
 				case _:
 					CharInput = WordInput[:1]
@@ -83,7 +80,8 @@ def ParsePass1(SourceFileContent):
 			print(f"is comment {IsComment}")
 			print(f"is number {IsNumber}")
 		if len(OutputList) != 0:
-			Output += [OutputList]
+			Output += OutputList
 		OutputList = []
 	print("")
 	print(Output)
+	return(Output)

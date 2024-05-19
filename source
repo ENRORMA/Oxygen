@@ -1,6 +1,6 @@
 mov 20 $1
 jmp 5 #comment after instruction
-nopp
+nop
 #this is a comment
 inc $1
 

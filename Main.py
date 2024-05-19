@@ -22,7 +22,9 @@ from Po.Language import *
 #import modules here because it has to be created first
 from Modules.ReadFile import *
 from Modules.ParsePass1 import *
+from Modules.ByteCounter import *
 
 #stage 1 assembling
-SourceFileContent = ReadFile(SourceFileName)
-SourceFileParse1Content = ParsePass1(SourceFileContent)
+Input = ReadFile(SourceFileName)
+Parsed1 = ParsePass1(Input)
+BytesCounted = ByteCounter(Parsed1)
